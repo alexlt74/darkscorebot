@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Trophy, Star, MessageSquare, Users, Check } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { PredictionsSection } from "@/components/PredictionsSection";
 
 const Index = () => {
   const { toast } = useToast();
@@ -30,6 +31,9 @@ const Index = () => {
           {isLoading ? "Carregando..." : "Experimente Grátis"}
         </button>
       </section>
+
+      {/* Predictions Section */}
+      <PredictionsSection />
 
       {/* Pricing Section */}
       <section className="py-20 bg-dark-lighter">
