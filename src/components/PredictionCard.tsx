@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Trophy, Flag, Clock, Goal } from "lucide-react";
+import { Trophy, Flag, Clock, Goal, Percent } from "lucide-react";
 import type { GamePrediction } from "@/services/predictionService";
 
 interface PredictionCardProps {
@@ -35,6 +35,22 @@ export const PredictionCard = ({ prediction }: PredictionCardProps) => {
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 flex items-center justify-center text-yellow-400">🟨</div>
             <span>Cartões: {prediction.predictedCards}</span>
+          </div>
+        </div>
+        
+        <div className="mt-4 pt-4 border-t border-neon-purple/20">
+          <div className="flex justify-between items-center">
+            <div className="text-sm">
+              <div>Casa: {prediction.odds.home.toFixed(2)}</div>
+              <div>Empate: {prediction.odds.draw.toFixed(2)}</div>
+              <div>Fora: {prediction.odds.away.toFixed(2)}</div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Percent size={20} className="text-neon-cyan" />
+              <span className="text-lg font-semibold">
+                {(prediction.confidence * 100).toFixed(0)}%
+              </span>
+            </div>
           </div>
         </div>
       </CardContent>
