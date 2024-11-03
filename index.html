@@ -8,12 +8,35 @@
   <meta name="description" content="GPT Engineer Generated Project" />
   <meta name="author" content="GPT Engineer" />
   <meta property="og:image" content="/og-image.svg" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div id="root"></div>
   <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   <script type="module" src="/src/main.tsx"></script>
+
+  <div class="container">
+    <h1>Previsões de Futebol</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Time da Casa</th>
+          <th>Visitante</th>
+          <th>Previsão de Gols</th>
+          <th>Previsão de Vencedor</th>
+          <th>Previsão de Escanteios</th>
+          <th>Previsão de Cartões</th>
+        </tr>
+      </thead>
+      <tbody id="predictions-table">
+        <!-- Previsões serão inseridas aqui pelo JavaScript -->
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
